@@ -31,4 +31,3 @@ void UMetadataComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 
 	// ...
 }
-
