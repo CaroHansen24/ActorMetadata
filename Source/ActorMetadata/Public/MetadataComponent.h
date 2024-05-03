@@ -34,6 +34,7 @@ public:
 	UFUNCTION(BlueprintCallable, Category = "Metadata")
 	void SetIsLikedByPlayer(bool liked);
 
+	UFUNCTION(BlueprintCallable, Category = "Metadata")
 	FString GetName();
 
 	bool GetIsLikedByPlayer();
