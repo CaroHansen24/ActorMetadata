@@ -4,12 +4,12 @@
 #include "MyGameInstance.h"
 
 void UMyGameInstance::addToRecentLikedActors(AActor* actor) {
-	lastFiveLikedActors.push(actor);
-	if (lastFiveLikedActors.size() > 5) {
-		lastFiveLikedActors.pop();
+	recentlikedActors.Add(actor);
+	if (recentlikedActors.Num() > 5) {
+		recentlikedActors.RemoveAt(0);
 	}
 }
 
-std::queue<AActor*> UMyGameInstance::getLastFiveLikedActors() {
-	return lastFiveLikedActors;
+TArray<AActor*> UMyGameInstance::getRecentLikedActors() {
+	return recentlikedActors;
 }

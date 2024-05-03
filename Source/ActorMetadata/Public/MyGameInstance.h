@@ -15,10 +15,12 @@ class ACTORMETADATA_API UMyGameInstance : public UGameInstance
 	GENERATED_BODY()
 
 private:
-	std::queue<AActor*> lastFiveLikedActors;
+	TArray<AActor*> recentlikedActors;
 	
 public:
+	UFUNCTION(BlueprintCallable)
 	void addToRecentLikedActors(AActor* actor);
 
-	std::queue<AActor*> getLastFiveLikedActors();
+	UFUNCTION(BlueprintCallable)
+	TArray<AActor*> getRecentLikedActors();
 };
