@@ -11,5 +11,5 @@ void UMyGameInstance::addToRecentLikedActors(AActor* actor) {
 }
 
 std::queue<AActor*> UMyGameInstance::getLastFiveLikedActors() {
-	return std::queue<AActor*>();
+	return lastFiveLikedActors;
 }

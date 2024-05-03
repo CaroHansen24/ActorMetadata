@@ -2,7 +2,6 @@
 
 #pragma once
 
-#include "string.h"
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
 #include "MetadataComponent.generated.h"
@@ -14,7 +13,7 @@ class ACTORMETADATA_API UMetadataComponent : public UActorComponent
 	GENERATED_BODY()
 
 private:
-	std::string name;
+	FString name;
 	bool isLikedByPlayer;
 
 public:	
@@ -29,19 +28,13 @@ public:
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
-	void SetName(std::string n) {
-		name = n;
-	}
+	UFUNCTION(BlueprintCallable, Category = "Metadata")
+	void SetName(FString n);
 
-	void SetIsLikedByPlayer(bool liked) {
-		isLikedByPlayer = liked;
-	}
+	UFUNCTION(BlueprintCallable, Category = "Metadata")
+	void SetIsLikedByPlayer(bool liked);
 
-	std::string GetName() {
-		return name;
-	}
+	FString GetName();
 
-	bool GetIsLikedByPlayer() {
-		return isLikedByPlayer;
-	}
+	bool GetIsLikedByPlayer();
 };

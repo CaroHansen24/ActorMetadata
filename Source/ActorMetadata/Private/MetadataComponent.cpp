@@ -31,3 +31,19 @@ void UMetadataComponent::TickComponent(float DeltaTime, ELevelTick TickType, FAc
 
 	// ...
 }
+
+void UMetadataComponent::SetName(FString n) {
+	name = n;
+}
+
+void UMetadataComponent::SetIsLikedByPlayer(bool liked) {
+	isLikedByPlayer = liked;
+}
+
+FString UMetadataComponent::GetName() {
+	return name;
+}
+
+bool UMetadataComponent::GetIsLikedByPlayer() {
+	return isLikedByPlayer;
+}
