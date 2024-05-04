@@ -15,6 +15,7 @@ class ACTORMETADATA_API UMetadataComponent : public UActorComponent
 private:
 	FString name;
 	bool isLikedByPlayer;
+	AActor* otherActor;
 
 public:	
 	// Sets default values for this component's properties
@@ -36,8 +37,14 @@ public:
 	void SetIsLikedByPlayer(bool liked);
 
 	UFUNCTION(BlueprintCallable, Category = "Metadata")
+	void SetOtherActor(AActor* actor);
+
+	UFUNCTION(BlueprintCallable, Category = "Metadata")
 	FString GetName();
 
 	UFUNCTION(BlueprintCallable, Category = "Metadata")
 	bool GetIsLikedByPlayer();
+
+	UFUNCTION(BlueprintCallable, Category = "Metadata")
+	AActor* GetOtherActor();
 };

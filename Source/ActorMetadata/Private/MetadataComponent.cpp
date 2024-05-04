@@ -40,11 +40,21 @@ void UMetadataComponent::SetIsLikedByPlayer(bool liked) {
 	isLikedByPlayer = liked;
 }
 
+void UMetadataComponent::SetOtherActor(AActor* actor)
+{
+	otherActor = actor;
+}
+
 FString UMetadataComponent::GetName() {
 	return name;
 }
 
 bool UMetadataComponent::GetIsLikedByPlayer() {
 	return isLikedByPlayer;
+}
+
+AActor* UMetadataComponent::GetOtherActor()
+{
+	return otherActor;
 }
 
