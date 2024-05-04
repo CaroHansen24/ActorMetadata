@@ -47,3 +47,4 @@ FString UMetadataComponent::GetName() {
 bool UMetadataComponent::GetIsLikedByPlayer() {
 	return isLikedByPlayer;
 }
+
