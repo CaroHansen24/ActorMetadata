@@ -5,7 +5,7 @@
 
 void UMyGameInstance::addToRecentLikedActors(AActor* actor) {
 	// If the actor was liked previously it should be removed from
-	// its previous index and moved to the front of the array.
+	// its previous index and moved to the end of the array.
 	if (recentlikedActors.Contains(actor)) {
 		recentlikedActors.Remove(actor);
 	}
