@@ -9,6 +9,8 @@ AMetadataActor::AMetadataActor()
  	// Set this actor to call Tick() every frame.  You can turn this off to improve performance if you don't need it.
 	PrimaryActorTick.bCanEverTick = true;
 
+	bReplicates = true;
+
 }
 
 // Called when the game starts or when spawned
@@ -23,6 +25,15 @@ void AMetadataActor::Tick(float DeltaTime)
 {
 	Super::Tick(DeltaTime);
 
+}
+
+void AMetadataActor::GetLifetimeReplicatedProps(TArray<FLifetimeProperty>& OutLifetimeProps) const
+{
+	Super::GetLifetimeReplicatedProps(OutLifetimeProps);
+
+	DOREPLIFETIME(AMetadataActor, Name);
+	DOREPLIFETIME(AMetadataActor, IsLikedByPlayer);
+	DOREPLIFETIME(AMetadataActor, OtherActor);
 }
 
 void AMetadataActor::SetName(FString n)
