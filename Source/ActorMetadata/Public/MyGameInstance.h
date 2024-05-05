@@ -2,6 +2,7 @@
 
 #pragma once
 
+#include <MetadataActor.h>
 #include "CoreMinimal.h"
 #include "Engine/GameInstance.h"
 #include "MyGameInstance.generated.h"
@@ -15,12 +16,12 @@ class ACTORMETADATA_API UMyGameInstance : public UGameInstance
 	GENERATED_BODY()
 
 private:
-	TArray<AActor*> recentlikedActors;
+	TArray<AMetadataActor*> recentlikedActors;
 	
 public:
 	UFUNCTION(BlueprintCallable)
-	void addToRecentLikedActors(AActor* actor);
+	void addToRecentLikedActors(AMetadataActor* actor);
 
 	UFUNCTION(BlueprintCallable)
-	TArray<AActor*> getRecentLikedActors();
+	TArray<AMetadataActor*> getRecentLikedActors();
 };

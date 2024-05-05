@@ -3,15 +3,15 @@
 
 #include "MyGameStateBase.h"
 
-TArray<UMetadataComponent*> AMyGameStateBase::getAllMetadata()
+TArray<FMetadataStruct> AMyGameStateBase::getAllMetadata()
 {
-	TArray<UMetadataComponent*> componentArray;
+	TArray<FMetadataStruct> MetadataArray;
 	TArray<AActor*> FoundActors;
-	UGameplayStatics::GetAllActorsWithTag(GetWorld(), FName("METADATA"), FoundActors);
-	for (int i = 0; i < FoundActors.Num(); i++) {
-		AActor* actor = FoundActors[i];
-		UMetadataComponent* component = actor->FindComponentByClass<UMetadataComponent>();
-		componentArray.Add(component);
+	UGameplayStatics::GetAllActorsOfClass(GetWorld(), AMetadataActor::StaticClass(), FoundActors);
+	for (AActor* Actor : FoundActors) {
+		AMetadataActor* MetadataActor = (AMetadataActor*) Actor;
+		MetadataArray.Add({ MetadataActor->GetName(), MetadataActor->GetIsLikedByPlayer(), MetadataActor->GetOtherActor() });
 	}
-	return componentArray;
+	
+	return MetadataArray;
 }

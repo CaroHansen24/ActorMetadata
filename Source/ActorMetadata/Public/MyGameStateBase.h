@@ -2,11 +2,26 @@
 
 #pragma once
 
-#include <MetadataComponent.h>
+#include <MetadataActor.h>
 #include "Kismet/GameplayStatics.h"
 #include "CoreMinimal.h"
 #include "GameFramework/GameStateBase.h"
 #include "MyGameStateBase.generated.h"
+
+USTRUCT(BlueprintType)
+struct FMetadataStruct
+{
+	GENERATED_BODY()
+
+	UPROPERTY(BlueprintReadOnly)
+	FString Name;
+
+	UPROPERTY(BlueprintReadOnly)
+	bool IsLikedByPlayer;
+
+	UPROPERTY(BlueprintReadOnly)
+	AActor* OtherActor;
+};
 
 /**
  * 
@@ -17,7 +32,8 @@ class ACTORMETADATA_API AMyGameStateBase : public AGameStateBase
 	GENERATED_BODY()
 
 public:
+
 	UFUNCTION(BlueprintCallable)
-	TArray<UMetadataComponent*> getAllMetadata();
+	TArray<FMetadataStruct> getAllMetadata();
 	
 };

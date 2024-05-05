@@ -3,7 +3,7 @@
 
 #include "MyGameInstance.h"
 
-void UMyGameInstance::addToRecentLikedActors(AActor* actor) {
+void UMyGameInstance::addToRecentLikedActors(AMetadataActor* actor) {
 	// If the actor was liked previously it should be removed from
 	// its previous index and moved to the end of the array.
 	if (recentlikedActors.Contains(actor)) {
@@ -16,6 +16,6 @@ void UMyGameInstance::addToRecentLikedActors(AActor* actor) {
 	}
 }
 
-TArray<AActor*> UMyGameInstance::getRecentLikedActors() {
+TArray<AMetadataActor*> UMyGameInstance::getRecentLikedActors() {
 	return recentlikedActors;
 }
