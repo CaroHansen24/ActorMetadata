@@ -12,13 +12,13 @@ class ACTORMETADATA_API AMetadataActor : public AActor
 	GENERATED_BODY()
 	
 public:	
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, Replicated)
 	FString Name;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, Replicated)
 	bool IsLikedByPlayer;
 
-	UPROPERTY(VisibleAnywhere)
+	UPROPERTY(VisibleAnywhere, Replicated)
 	AActor* OtherActor;
 
 
